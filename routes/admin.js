@@ -2,11 +2,13 @@ const path = require('path')
 
 const express = require('express');
 
+const rootDir = require('../helpers/path');
+
 const router = express.Router();
 
 // localhost:3000/admin/add-product => GET
 router.get('/add-product', (req, res, next) => {
-    res.sendFile(path.join(__dirname, '../', 'views', 'add-product.html'));
+    res.sendFile(path.join(rootDir, 'views', 'add-product.html'));
 });
 
 // localhost:3000/admin/add-product => POST
