@@ -10,7 +10,7 @@ const products = [];
 
 // localhost:3000/admin/add-product => GET
 router.get('/add-product', (req, res, next) => {
-    res.render('add-product', { pageTitle: 'Add Prodcut' })
+    res.render('add-product', { pageTitle: 'Add Prodcut', path: '/admin/add-product' })
 });
 
 // localhost:3000/admin/add-product => POST
