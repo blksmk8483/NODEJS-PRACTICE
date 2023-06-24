@@ -15,7 +15,7 @@ const getProductsFromFile = cb => {
         if (err) {
             cb([]);
         } else {
-        cb(JSON.parse(fileContent));
+            cb(JSON.parse(fileContent));
         }
     });
 }
@@ -34,7 +34,7 @@ module.exports = class Product {
         getProductsFromFile(products => {
             if (this.id) {
                 const existingProductIndex = products.findIndex(prod => prod.id === this.id);
-                const updatedProducts = [ ...products ];
+                const updatedProducts = [...products];
                 updatedProducts[existingProductIndex] = this;
                 fs.writeFile(p, JSON.stringify(updatedProducts), (err) => {
                     console.log(err);
