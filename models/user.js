@@ -7,7 +7,7 @@ const User = sequelize.define("user", {
     type: Sequelize.INTEGER,
     autoIncrement: true,
     allowNull: false,
-    primaryKey: TextTrackCue,
+    primaryKey: true,
   },
   name: Sequelize.STRING,
   email: Sequelize.STRING,
