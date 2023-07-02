@@ -19,7 +19,7 @@ const shopRoutes = require("./routes/shop");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use((req, rs, next) => {
+app.use((req, res, next) => {
   User.findByPk(1)
     .then((user) => {
       req.user = user;
@@ -40,7 +40,7 @@ sequelize
   // .sync({ force: true })
   .sync()
   .then((result) => {
-    User.findByPk(1);
+    return User.findByPk(1);
     // console.log(result);
   })
   .then((user) => {
